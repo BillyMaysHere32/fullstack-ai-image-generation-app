@@ -18,6 +18,31 @@ const Home = () => {
   const [allPosts, setAllPosts] = useState([]);
   const [searchText, setSearchText] = useState('');
 
+  useEffect(() => {
+    const fetchPosts = async () => {
+      setLoading(true);
+
+      try {
+        const response = await fetch('http://localhost:4000/api/v1/post', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
+  
+        if (response.ok) {
+          const result = await response.json();
+          setAllPosts(result.data.reverse());
+        }
+      } catch (err) {
+        alert(err);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchPosts();
+  }, []);
+
   return (
     <section>
        <div>
