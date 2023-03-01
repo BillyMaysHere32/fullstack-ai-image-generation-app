@@ -62,6 +62,7 @@ const Home = () => {
         <h1 className="font-extrabold text-white text-[32px]">Gallery</h1>
         <p className="mt-2 text-[#e5e8eb] text-[14px] max-w-[500px]">Generate visually stunning images with the DALL-E AI API and add them to the collection.</p>
       </div>
+      
       <div className="mt-10">
         <FormField 
           labelName="Search posts"
