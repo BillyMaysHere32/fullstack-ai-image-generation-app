@@ -1,18 +1,24 @@
-import { BsPlus, BsFillLightningFill, BsGearFill } from 'react-icons/bs';
-import { FaFire, FaPoo } from 'react-icons/fa';
+import React from 'react'
+import { BsPlus, BsGearFill } from 'react-icons/bs';
+import { FaUserAlt } from 'react-icons/fa';
+import { FiHome } from 'react-icons/fi';
+import { Link } from "react-router-dom"
 
 const SideBar = () => {
   return (
     <div className="sticky top-0 left-0 h-screen p-6 flex flex-col
                  bg-gray-900 shadow-lg">
                     
-        <SideBarIcon icon={<FaFire size="36" />} />
+        <Link to="/">
+            <SideBarIcon icon={<FiHome size="36" />} text="Home" />
+        </Link>
         <Divider />
-        <SideBarIcon icon={<BsPlus size="60" />} />
-        <SideBarIcon icon={<BsFillLightningFill size="36" />} />
-        <SideBarIcon icon={<FaPoo size="36" />} />
+        <Link to="/create-post">
+        <SideBarIcon icon={<BsPlus size="60" />} text="Create a post."/>
+        </Link>
+        <SideBarIcon icon={<FaUserAlt size="36" />} text="Coming Soon"/>
         <Divider />
-        <SideBarIcon icon={<BsGearFill size="36" />} />
+        <SideBarIcon icon={<BsGearFill size="36" />} text="Coming Soon"/>
     </div>
   );
 };
