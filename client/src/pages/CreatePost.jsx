@@ -25,6 +25,9 @@ const CreatePost = () => {
     if (form.prompt) {
       try {
         setGeneratingImg(true);
+        //const response = await fetch('https://bit-pic.herokuapp.com/api/v1/dalle', {
+        
+        // dev
         const response = await fetch('http://localhost:4000/api/v1/dalle', {
           method: 'POST',
           headers: {
@@ -51,6 +54,9 @@ const CreatePost = () => {
     if (form.prompt && form.photo) {
       setLoading(true);
       try {
+        //const response = await fetch('https://bit-pic.herokuapp.com/api/v1/post', {
+        
+        // dev
         const response = await fetch('http://localhost:4000/api/v1/post', {
           method: 'POST',
           headers: {

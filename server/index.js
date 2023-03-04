@@ -12,6 +12,9 @@ const app = express();
 app.use(
   cors({
     // client url
+    origin: "https://bit-pic.netlify.app",
+
+    // dev url
     origin: "http://localhost:5173",
   })
 );
@@ -35,5 +38,3 @@ const PORT = process.env.PORT|| 4000;
 mongoose.connect(process.env.CONNECTION_URL, { useUnifiedTopology: true, useNewUrlParser: true })
     .then(() => app.listen(PORT, () => console.log(`Server Running on Port: http://localhost:${PORT}`)))
     .catch((error) => console.log(`${error} did not connect`));
-
-//app.listen(PORT, () => console.log(`Server Running on Port: http://localhost:${PORT}`))
