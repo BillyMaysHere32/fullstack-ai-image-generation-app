@@ -33,10 +33,9 @@ export const postsSlice = createSlice({
               thumbsUp: 0,
           }
           return post;
-      });
-
-      // Add any fetched posts to the array
-      state.posts = state.posts.concat(loadedPosts)
+        });
+        // Add any fetched posts to the array
+        state.posts = state.posts.concat(loadedPosts)
       })
       .addCase(fetchPosts.rejected, (state, action) => {
         state.status = 'failed'

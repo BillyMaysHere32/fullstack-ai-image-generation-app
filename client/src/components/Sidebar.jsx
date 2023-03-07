@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 
 const SideBar = () => {
   return (
-    <div className="sticky top-0 left-0 h-screen p-6 flex flex-col
+    <div className="sticky top-0 left-0 h-screen md:p-6 p-2 flex flex-col
                  bg-gray-900 shadow-lg">
                     
         <Link to="/">

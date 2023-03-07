@@ -68,10 +68,12 @@ const CreatePost = () => {
         await response.json();
         alert('Success');
         navigate('/');
+        window.location.reload();
       } catch (err) {
         alert(err);
       } finally {
         setLoading(false);
+        
       }
     } else {
       alert('Please generate an image with proper details');
@@ -79,7 +81,7 @@ const CreatePost = () => {
   };
 
   return (
-    <section className="sm:w-screen sm:p-8">
+    <section className="sm:w-screen p-4">
       <div>
         <h1 className="font-extrabold text-white text-[32px]">Create</h1>
         <p className="mt-2 text-[#f2f2f4] text-[14px] max-w-[500px]">Generate an imaginative image through DALL-E AI and share it with the community</p>
