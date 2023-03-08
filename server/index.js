@@ -4,6 +4,7 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import postRoutes from './routes/postRoutes.js';
 import dalleRoutes from './routes/dalleRoutes.js';
+import userRouter from './routes/userRoutes.js';
 
 dotenv.config();
 
@@ -22,8 +23,9 @@ app.use(
 app.use(express.json({ limit: '50mb' }));
 
 // create api endpoints to connect to frontend
-app.use('/api/v1/post', postRoutes);
-app.use('/api/v1/dalle', dalleRoutes);
+app.use('/post', postRoutes);
+app.use('/dalle', dalleRoutes);
+app.use('/user', userRouter);
 
 app.get('/', async (req, res) => {
   res.status(200).json({

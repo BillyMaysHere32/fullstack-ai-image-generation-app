@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios';
-// 'https://bit-pic.herokuapp.com/api/v1/post'
-const POSTS_URL = 'http://localhost:4000/api/v1/post';
+// 'https://bit-pic.herokuapp.com/post'
+const POSTS_URL = 'http://localhost:4000/post';
 
 const initialState = {
   posts: [],
@@ -9,7 +9,7 @@ const initialState = {
   error: null, 
 }
 
-export const fetchPosts = createAsyncThunk('api/v1/post/fetchPosts', async () => {
+export const fetchPosts = createAsyncThunk('/post/fetchPosts', async () => {
   try {
     const response = await axios.get(POSTS_URL)
     return response.data.data;
