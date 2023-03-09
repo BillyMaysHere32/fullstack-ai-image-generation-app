@@ -22,7 +22,7 @@ export const getPosts = async (req, res) => {
 
 export const createPost = async (req, res) => {
     try {
-      const { name, prompt, photo } = req.body;
+      const { name, prompt, photo } = req.body.form;
       const photoUrl = await cloudinary.uploader.upload(photo);
   
       const newPost = await Post.create({
