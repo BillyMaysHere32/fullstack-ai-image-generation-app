@@ -47,6 +47,9 @@ export const postsSlice = createSlice({
         state.status = 'failed'
         state.error = action.error.message
       })
+      .addCase(addNewPost.pending, (state) => {
+        state.status = 'loading'
+      })
       .addCase(addNewPost.fulfilled, (state, action) => {
         // const sortedPosts = state.posts.sort((a, b) => {
         //     if (a.id > b.id) return 1
@@ -60,6 +63,7 @@ export const postsSlice = createSlice({
         //     thumbsUp: 0,
         // }
         state.posts.push(action.payload)
+        state.status = 'succeeded'
     })
   },
 })
