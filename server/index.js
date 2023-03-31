@@ -16,7 +16,7 @@ app.use(
     origin: "https://bit-pic.netlify.app",
 
     // dev url
-    origin: "http://localhost:5173",
+    //origin: "http://localhost:5173",
   })
 );
 

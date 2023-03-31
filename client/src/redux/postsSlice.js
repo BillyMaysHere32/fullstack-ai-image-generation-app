@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios';
-// 'https://bit-pic.herokuapp.com/post'
-const POSTS_URL = 'http://localhost:4000/post';
+const POSTS_URL = 'https://bit-pic.herokuapp.com/post'
+//const POSTS_URL = 'http://localhost:4000/post';
 
 const initialState = {
   posts: [],
@@ -51,17 +51,15 @@ export const postsSlice = createSlice({
         state.status = 'loading'
       })
       .addCase(addNewPost.fulfilled, (state, action) => {
-        // const sortedPosts = state.posts.sort((a, b) => {
-        //     if (a.id > b.id) return 1
-        //     if (a.id < b.id) return -1
-        //     return 0
-        // })
-        // action.payload.id = sortedPosts[sortedPosts.length - 1].id + 1;
-        // action.payload.userId = Number(action.payload.userId)
-        // action.payload.date = new Date().toISOString();
-        // action.payload.reactions = {
-        //     thumbsUp: 0,
-        // }
+        const sortedPosts = state.posts.sort((a, b) => {
+            if (a.id > b.id) return 1
+            if (a.id < b.id) return -1
+            return 0
+        })
+        action.payload.date = new Date().toISOString();
+        action.payload.reactions = {
+            thumbsUp: 0,
+        }
         state.posts.push(action.payload)
         state.status = 'succeeded'
     })

@@ -1,27 +1,28 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+// import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+// import axios from "axios";
 
-const USERS_URL = 'http://localhost:4000/user';
+// const USERS_URL = 'https://bit-pic.herokuapp.com/post'
+// const USERS_URL = 'http://localhost:4000/user';
 
-const initialState = []
+// const initialState = []
 
-export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
-    const response = await axios.get(USERS_URL);
-    return response.data
-})
+// export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
+//     const response = await axios.get(USERS_URL);
+//     return response.data
+// })
 
-const usersSlice = createSlice({
-    name: 'users',
-    initialState,
-    reducers: {},
-    extraReducers(builder) {
-        builder.addCase(fetchUsers.fulfilled, (state, action) => {
-            return action.payload;
-            // replaces user state completely
-        })
-    }
-})
+// const usersSlice = createSlice({
+//     name: 'users',
+//     initialState,
+//     reducers: {},
+//     extraReducers(builder) {
+//         builder.addCase(fetchUsers.fulfilled, (state, action) => {
+//             return action.payload;
+//             // replaces user state completely
+//         })
+//     }
+// })
 
-export const selectAllUsers = (state) => state.users;
+// export const selectAllUsers = (state) => state.users;
 
-export default usersSlice.reducer
+// export default usersSlice.reducer

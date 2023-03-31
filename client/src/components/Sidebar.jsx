@@ -16,9 +16,13 @@ const SideBar = () => {
         <Link to="/create-post">
         <SideBarIcon icon={<BsPlus size="60" />} text="Create a post."/>
         </Link>
-        <SideBarIcon icon={<FaUserAlt size="36" />} text="Coming Soon"/>
+        <Link to="/contact">
+        <SideBarIcon icon={<FaUserAlt size="36" />} text="Contact"/>
+        </Link>
         <Divider />
-        <SideBarIcon icon={<BsGearFill size="36" />} text="Coming Soon"/>
+        <Link to="/about">
+        <SideBarIcon icon={<BsGearFill size="36" />} text="About"/>
+        </Link>
     </div>
   );
 };
